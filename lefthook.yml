@@ -1,0 +1,11 @@
+pre-commit:
+  commands:
+    lint:
+      run: pnpm lint
+    fmt:
+      run: pnpm fmt
+
+pre-push:
+  commands:
+    check:
+      run: pnpm check

@@ -1,0 +1,19 @@
+{
+  "name": "kyuko",
+  "workspaceFolder": "/home/node/workspace/kyuko",
+  "dockerComposeFile": "../docker/docker-compose.yml",
+  "service": "kyuko",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot",
+        "eamodio.gitlens",
+        "oderwat.indent-rainbow",
+        "GitHub.vscode-github-actions",
+        "adam-bender.commit-message-editor",
+        "biomejs.biome"
+      ]
+    }
+  }
+}

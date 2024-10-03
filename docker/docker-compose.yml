@@ -1,0 +1,24 @@
+services:
+  kyuko:
+    container_name: kyuko
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      # ホストのディレクトリをコンテナにマウント
+      - type: bind
+        source: ../
+        target: /home/node/workspace/kyuko
+      # /node_modulesはvolumeでマウント
+      - type: volume
+        source: kyuko-node-modules
+        target: /home/node/workspace/kyuko/node_modules
+      # /.pnpm-storeはvolumeでマウント
+      - type: volume
+        source: kyuko-pnpm-store
+        target: /home/node/workspace/kyuko/.pnpm-store
+    tty: true
+
+volumes:
+  kyuko-node-modules:
+  kyuko-pnpm-store:

@@ -1,0 +1,93 @@
+{
+  "folders": [
+    {
+      "name": "🏫 kyuko",
+      "path": "."
+    },
+    {
+      "name": "📄 pages",
+      "path": "./app"
+    }
+  ],
+  "settings": {
+    "commit-message-editor.staticTemplate": [
+      "{type}{scope} {description} {issue}"
+    ],
+    "commit-message-editor.dynamicTemplate": [
+      "{type}{scope} {description} {issue}"
+    ],
+    "commit-message-editor.tokens": [
+      {
+        "label": "Type",
+        "name": "type",
+        "type": "enum",
+        "description": "変更の種類。",
+        "combobox": true,
+        "options": [
+          {
+            "label": "feat: ✨",
+            "value": "feat: ✨",
+            "description": "機能の追加"
+          },
+          {
+            "label": "remove: 🔥",
+            "value": "remove: 🔥",
+            "description": "機能の削除"
+          },
+          {
+            "label": "bugfix: 🐛",
+            "value": "bugfix: 🐛",
+            "description": "バグの修正"
+          },
+          {
+            "label": "refactor: ♻",
+            "value": "refactor: ♻",
+            "description": "リファクタリング"
+          },
+          {
+            "label": "doc: 📚",
+            "value": "doc: 📚",
+            "description": "ドキュメントの変更"
+          },
+          {
+            "label": "test: 🧪",
+            "value": "test: 🧪",
+            "description": "テストの追加・修正"
+          },
+          {
+            "label": "WIP: 🚧",
+            "value": "WIP: 🚧",
+            "description": "作業中"
+          },
+          {
+            "label": "chore: 🧹",
+            "value": "chore: 🧹",
+            "description": "その他の変更"
+          }
+        ]
+      },
+      {
+        "label": "Scope",
+        "name": "scope",
+        "type": "text",
+        "description": "変更の範囲。\n例:\n・.gitignore\n・NavBar",
+        "prefix": " (",
+        "suffix": ")"
+      },
+      {
+        "label": "Short Description",
+        "name": "description",
+        "type": "text",
+        "description": "コミットの要約。\n\n例:\n・認証を実装\n・認証画面のスタイルが崩れるバグを修正"
+      },
+      {
+        "label": "Issue",
+        "name": "issue",
+        "type": "text",
+        "description": "関連するIssue番号。 e.g. #47, #53, ...",
+        "prefix": " (",
+        "suffix": ")"
+      }
+    ]
+  }
+}
