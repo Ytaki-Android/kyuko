@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Button, View, StyleSheet, Text } from 'react-native';
-import * as Notifications from 'expo-notifications';
-import * as Device from 'expo-device';
+import * as Device from "expo-device";
+import * as Notifications from "expo-notifications";
+import React, { useEffect, useState } from "react";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 const Root = () => {
   const [expoPushToken, setExpoPushToken] = useState<string | null>(null);
@@ -19,21 +19,22 @@ const Root = () => {
   // 通知の許可をリクエスト
   const registerForPushNotificationsAsync = async () => {
     if (Device.isDevice) {
-      const { status: existingStatus } = await Notifications.getPermissionsAsync();
+      const { status: existingStatus } =
+        await Notifications.getPermissionsAsync();
       let finalStatus = existingStatus;
-      if (existingStatus !== 'granted') {
+      if (existingStatus !== "granted") {
         const { status } = await Notifications.requestPermissionsAsync();
         finalStatus = status;
       }
-      if (finalStatus !== 'granted') {
-        alert('Failed to get push token for push notification!');
+      if (finalStatus !== "granted") {
+        alert("Failed to get push token for push notification!");
         return;
       }
       const token = (await Notifications.getExpoPushTokenAsync()).data;
       setExpoPushToken(token);
       console.log(token);
     } else {
-      alert('Must use physical device for Push Notifications');
+      alert("Must use physical device for Push Notifications");
     }
   };
 
@@ -42,7 +43,7 @@ const Root = () => {
     await Notifications.scheduleNotificationAsync({
       content: {
         title: "新しい休講情報があります",
-        data: { data: 'データの例' },
+        data: { data: "データの例" },
       },
       trigger: { seconds: 2 }, // 2秒後に通知
     });
@@ -55,7 +56,10 @@ const Root = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Expo Go ローカル通知</Text>
-      <Button title="2秒後にローカル通知を送る" onPress={scheduleNotification} />
+      <Button
+        title="2秒後にローカル通知を送る"
+        onPress={scheduleNotification}
+      />
     </View>
   );
 };
@@ -63,8 +67,8 @@ const Root = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
   },
   title: {

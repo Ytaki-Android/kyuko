@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Text, View, StyleSheet, ScrollView, Button } from "react-native";
 import axios from "axios";
-import * as Notifications from "expo-notifications";
 import * as Device from "expo-device";
+import * as Notifications from "expo-notifications";
+import type React from "react";
+import { useEffect, useState } from "react";
+import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 
 const STORAGE_KEY = "@myapp_data"; // AsyncStorageのキー
 
